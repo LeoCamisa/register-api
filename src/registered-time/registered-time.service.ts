@@ -6,7 +6,8 @@ import { CreateRegisteredTimeInput } from './dto/create-registered-time.input';
 import { UserService } from 'src/user/user.service';
 
 @Injectable()
-export class RegisteredTimeService {constructor(
+export class RegisteredTimeService {
+  constructor(
     @InjectRepository(RegisteredTime)
     private registeredTimeRepository: Repository<RegisteredTime>,
     private userService: UserService,
@@ -45,4 +46,5 @@ export class RegisteredTimeService {constructor(
       take: limit,
     });
     return times;
-  }}
+  }
+}
