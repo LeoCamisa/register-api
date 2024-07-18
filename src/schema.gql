@@ -1,0 +1,76 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type RegisteredTime {
+  id: Int!
+  time_registered: String!
+  userId: Int!
+  user: User!
+}
+
+type User {
+  id: Int!
+  name: String!
+  email: String!
+  password: String!
+  role: String!
+  registeredTimes: [RegisteredTime!]!
+}
+
+type LoginResponse {
+  access_token: String!
+  role: String!
+  user_name: String!
+  user_id: String!
+}
+
+type RegisteredTimeType {
+  id: Int!
+  time_registered: String!
+  user: UserType!
+}
+
+type UserType {
+  id: ID!
+  name: String!
+  email: String!
+  password: String!
+  role: String!
+  registeredTimes: [RegisteredTimeType!]
+}
+
+type Query {
+  getUserById(id: String!): User!
+  users: [UserType!]!
+  user(id: Float!): UserType!
+  registeredTimes(userId: Int!, limit: Int, offset: Int): [RegisteredTimeType!]!
+  allRegisteredTimes(limit: Int, offset: Int): [RegisteredTimeType!]!
+}
+
+type Mutation {
+  login(input: LoginInput!): LoginResponse!
+  createUser(input: CreateUserInput!): UserType!
+  createRegisteredTime(input: CreateRegisteredTimeInput!): RegisteredTimeType!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
+  password: String!
+  role: String!
+}
+
+input CreateRegisteredTimeInput {
+  time_registered: String!
+  userId: Int!
+}
+
+type Subscription {
+  registeredTimeAdded: RegisteredTimeType!
+}
