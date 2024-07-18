@@ -4,7 +4,7 @@ import { UserService } from '../user/user.service';
 import { LoginInput } from './dto/login.input';
 import { LoginResponse } from './dto/login-response.dto';
 import { User } from '../user/user.entity/user.entity';
-
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class AuthService {
@@ -16,7 +16,7 @@ export class AuthService {
   async validateUser(email: string, pass: string): Promise<any> {
     const user = await this.usersService.findByEmail(email);
     console.log('User found:', user);
-    if (user && (pass)) {
+    if (user && await bcrypt.compare(pass, user.password)) {
       const { password, ...result } = user;
       return result;
     }
