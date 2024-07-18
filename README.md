@@ -1,6 +1,6 @@
-# 🚀 Points Register API
+# 🚀 Register point API
 
-Welcome to the Points Register API! This project is designed to manage user registrations and time logs using GraphQL, NestJS, PostgreSQL, Docker, and TypeORM.
+Welcome to the operating point record api! This project is designed to manage user registrations and time logs using GraphQL, NestJS, PostgreSQL, Docker, and TypeORM.
 
 ## 📚 Table of Contents
 
