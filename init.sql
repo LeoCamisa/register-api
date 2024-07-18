@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS "user" (
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     role VARCHAR(50) NOT NULL
-),
+);
 
 -- Create table registered_time
 CREATE TABLE IF NOT EXISTS "registered_time" (
