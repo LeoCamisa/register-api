@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
+</p>
+
 # 🚀 Register point API
 
 Welcome to the operating point record api! This project is designed to manage user registrations and time logs using GraphQL, NestJS, PostgreSQL, Docker, and TypeORM.
@@ -66,6 +70,10 @@ Before you begin, ensure you have the following installed on your machine:
     POSTGRES_USER=
     POSTGRES_PASSWORD=
     POSTGRES_DB=
+
+    # JWT configuration
+    JWT_SECRET=
+    JWT_EXPIRATION_TIME=3600s
 
     # Application configuration
     APP_PORT=3000
