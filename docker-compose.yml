@@ -5,11 +5,11 @@ services:
      image: postgres:13
      container_name: postgres
      environment:
-      POSTGRES_USER: effiadm
-      POSTGRES_PASSWORD: pw123
-      POSTGRES_DB: efficlindb
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
      ports:
-     - "5432:5432"
+     - "${POSTGRES_PORT}:5432"
      volumes:
      - postgres_data:/var/lib/postgresql/postgres_data
      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
