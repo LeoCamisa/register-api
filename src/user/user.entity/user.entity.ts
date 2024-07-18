@@ -1,4 +1,5 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { RegisteredTime } from 'src/registered-time/registered-time.entity/registered-time.entity';
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 
 @ObjectType()
@@ -23,4 +24,8 @@ export class User {
   @Field()
   @Column({ length: 45 })
   role: string;
+
+  @Field(() => [RegisteredTime])
+  @OneToMany(() => RegisteredTime, registeredTime => registeredTime.user)
+  registeredTimes: RegisteredTime[];
 }
