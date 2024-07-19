@@ -16,7 +16,3 @@ CREATE TABLE IF NOT EXISTS "registered_time" (
        FOREIGN KEY(userId)
        REFERENCES "user"(id)
 );
-
--- Insert the administrator user
-INSERT INTO "user" (name, email, password, role)
-VALUES ('Administrador', 'admin@efficlin.com.br', 'pw123', 'admin');
