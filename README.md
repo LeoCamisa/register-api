@@ -89,25 +89,12 @@ Before you begin, ensure you have the following installed on your machine:
     docker-compose up --build
     ```
 
-2. **Access the application:**
-
-    The API will be available at `http://localhost:3000`.
-
-### Without Docker
-
-1. **Start the PostgreSQL database:**
-
-    Ensure your PostgreSQL database is running and accessible with the credentials provided in the `.env` file.
 
 2. **Run the application:**
 
     ```bash
     npm run start:dev
     ```
-
-3. **Access the application:**
-
-    The API will be available at `http://localhost:3000`.
 
 ## 🎮 GraphQL Playground
 
